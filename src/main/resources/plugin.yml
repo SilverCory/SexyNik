@@ -1,0 +1,26 @@
+name: SexyNik
+author: Cory Redmond
+version: 420-1337
+main: red.cory.sexynik.SexyNikPlugin
+description: Set your nik name.
+
+commands:
+  nik:
+    description: Set your nik name.
+    permission: nik.nik
+    permission-message: You don't have permissions to do this.
+    aliases:
+      - nick
+      - nikname
+      - nickname
+  unnik:
+    description: Unset your nik name.
+    permission: nik.unnik
+    permission-message: You don't have permissions to do this.
+    aliases:
+        - unnick
+        - unnikname
+        - unnickname
+        - fuckoffnik
+        - nikoff
+        - nickoff

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>red.cory</groupId>
+    <artifactId>SexyNik</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <developers>
+        <developer>
+            <name>Cory Redmond</name>
+            <email>ace@ac3-servers.eu</email>
+            <url>https://cory.red/</url>
+            <id>CoryOry</id>
+            <timezone>Europe/London</timezone>
+        </developer>
+    </developers>
+
+    <properties>
+        <versions.java>1.8</versions.java>
+        <versions.bukkit>1.12.2-R0.1-SNAPSHOT</versions.bukkit>
+    </properties>
+
+    <build>
+
+        <defaultGoal>clean package</defaultGoal>
+
+        <finalName>SexyNik</finalName>
+
+        <plugins>
+            <plugin>
+                <groupId>net.md-5</groupId>
+                <artifactId>scriptus</artifactId>
+                <version>0.3.1</version>
+                <executions>
+                    <execution>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>describe</goal>
+                        </goals>
+                        <configuration>
+                            <format>git-%s</format>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+            </plugin>
+        </plugins>
+
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+
+    </build>
+
+    <repositories>
+        <repository>
+            <id>destroystokyo-snapshots</id>
+            <url>https://destroystokyo.com/repo/repository/maven-snapshots/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.destroystokyo.paper</groupId>
+            <artifactId>paper-api</artifactId>
+            <version>${versions.bukkit}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+</project>
